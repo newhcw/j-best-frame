@@ -20,9 +20,27 @@ import java.time.Duration;
 
 import static io.lettuce.core.ReadFrom.REPLICA_PREFERRED;
 
+
 @Configuration
 public class RedisConfiguration {
 
+
+    /**
+     *
+     * 解决方案1：
+     *
+     * 升级到SpringBoot2.3.0或以上版本。并添加如下配置项
+     * spring.redis.timeout=60s
+     * spring.redis.lettuce.cluster.refresh.period=60s
+     * spring.redis.lettuce.cluster.refresh.adaptive=true
+     * 解决方案2：
+     * 配置LettuceConnectionFactory ，设置拓扑刷新策略。
+     *
+     *
+     * @param redisProperties
+     * @param clientResources
+     * @return
+     */
     @Bean
     public LettuceConnectionFactory redisConnectionFactory(RedisProperties redisProperties, ClientResources clientResources) {
 
