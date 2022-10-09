@@ -63,7 +63,8 @@ public class AlarmFilter extends Filter<ILoggingEvent> {
                 @Override
                 public void run() {
                     StringBuffer content = new StringBuffer();
-                    content.append("********异常告警信息*********")
+                    content.append("\n\n")
+                            .append("********异常告警信息*********")
                             .append("\n\n")
                             .append("服务器IP：").append(AlarmFilter.ip)
                             .append("\n\n")
