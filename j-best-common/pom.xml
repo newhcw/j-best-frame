@@ -16,6 +16,7 @@
         <module>j-best-web</module>
         <module>j-best-cache</module>
         <module>j-best-mongo</module>
+        <module>j-best-alarm</module>
     </modules>
 
 
