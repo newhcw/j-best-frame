@@ -37,7 +37,7 @@
         </encoder>
         <!-- 日志记录器的滚动策略，按日期，按大小记录 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${baseLogPath}/${appName}/logs/${appName}.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>${baseLogPath}/${appName}/logs/${appName}.%d{yyyy-MM-dd}.%i.log.tar.gz</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>${maxFileSize}</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
