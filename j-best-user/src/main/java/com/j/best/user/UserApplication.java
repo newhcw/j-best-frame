@@ -10,5 +10,6 @@ public class UserApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(UserApplication.class);
+        System.out.println("j-best-user is started");
     }
 }

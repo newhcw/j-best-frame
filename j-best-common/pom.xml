@@ -17,6 +17,8 @@
         <module>j-best-cache</module>
         <module>j-best-mongo</module>
         <module>j-best-alarm</module>
+        <module>j-best-utils</module>
+        <module>j-best-mybatis-plus</module>
     </modules>
 
 
@@ -26,7 +28,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <lombok.version>1.18.24</lombok.version>
         <springboot.version>2.7.4</springboot.version>
-        <mybatis.version>2.3</mybatis.version>
+        <mybatis.version>2.2.2</mybatis.version>
+        <slf.api.version>2.0.3</slf.api.version>
     </properties>
 
     <dependencyManagement>
@@ -49,6 +52,17 @@
                 <version>${lombok.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf.api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+                <version>${springboot.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>

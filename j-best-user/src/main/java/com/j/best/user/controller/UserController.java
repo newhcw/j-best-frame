@@ -13,9 +13,16 @@ public class UserController {
     @Autowired
     private RedisUtil redisUtil;
 
-    @RequestMapping(value = "/test/redis")
-    public String testRedis() {
-       return (String) redisUtil.get("test");
+
+    @RequestMapping(value = "/test/redis/set")
+    public String testRedisSet() {
+        redisUtil.set("k","k");
+        return "ok";
+    }
+
+    @RequestMapping(value = "/test/redis/get")
+    public String testRedisGet() {
+       return (String) redisUtil.get("k");
     }
 
     @RequestMapping(value = "/test/log")
