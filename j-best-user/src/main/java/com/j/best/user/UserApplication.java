@@ -1,5 +1,8 @@
 package com.j.best.user;
 
+import com.j.best.common.cache.config.RedisUtil;
+import com.j.best.user.domain.pojo.UserInfo;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
