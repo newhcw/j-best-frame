@@ -15,4 +15,8 @@ public class UserServiceImpl implements IUserService {
         return userCacheResposity.queryCache(userId);
     }
 
+    public Void register(String phone, String nickName) {
+        return null;
+    }
+
 }

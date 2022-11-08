@@ -17,8 +17,13 @@ public class UserController {
     private IUserService userService;
 
     @RequestMapping(value = "/query")
-    public ResultHttpResponse queyUserInfoByUserId(@RequestParam(value = "userId")String userId) {
+    public ResultHttpResponse queryUserInfoByUserId(@RequestParam(value = "userId")String userId) {
         return ResultHttpResponse.setData(userService.queryUserInfoByUserId(userId));
+    }
+
+    @RequestMapping(value = "/register")
+    public ResultHttpResponse register(@RequestParam(value = "phone")String phone,@RequestParam(value = "nickName")String nickName) {
+        return ResultHttpResponse.setData(userService.register(phone,nickName));
     }
 
 }
