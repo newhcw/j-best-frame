@@ -4,13 +4,19 @@ import com.j.best.user.domain.vo.ActivityApplyContext;
 
 public class ApplyTimeLimitRule implements IRule{
 
+    private IRule nextRule;
+
     @Override
     public Boolean checkRule(ActivityApplyContext activityApplyContext) {
-        return null;
+        System.out.println("apply time rule");
+        if (nextRule != null) {
+            nextRule.checkRule(activityApplyContext);
+        }
+        return true;
     }
 
     @Override
-    public IRule next(IRule rule) {
-        return null;
+    public void next(IRule rule) {
+        nextRule = rule;
     }
 }

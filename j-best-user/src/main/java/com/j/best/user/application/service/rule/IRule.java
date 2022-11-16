@@ -6,5 +6,5 @@ public interface IRule {
 
    Boolean checkRule(ActivityApplyContext activityApplyContext);
 
-    IRule next(IRule rule);
+    void next(IRule rule);
 }
