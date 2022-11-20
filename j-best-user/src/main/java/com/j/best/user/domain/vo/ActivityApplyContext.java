@@ -14,4 +14,5 @@ public class ActivityApplyContext {
 
 
     ActivityApplyHttpRequest applyHttpRequest;
+
 }

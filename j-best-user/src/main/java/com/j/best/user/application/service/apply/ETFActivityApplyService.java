@@ -1,30 +1,38 @@
 package com.j.best.user.application.service.apply;
 
 
+import com.j.best.user.application.service.action.IUserScoreComponent;
 import com.j.best.user.application.service.rule.ApplyRuleEngine;
 import com.j.best.user.application.service.rule.ApplyTimeLimitRule;
+import com.j.best.user.application.service.rule.IRule;
 import com.j.best.user.application.service.rule.RepeatApplyRule;
 import com.j.best.user.domain.vo.ActivityApplyContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ETFActivityApplyService extends AbstractActivityApplyService implements IActivityApplyService {
 
 
+    @Autowired
+    private IUserScoreComponent userScoreComponent;
+
     @Override
     public String getActivityType() {
         return ActivityType.ETF.getActivityType();
     }
 
+
     @Override
-    public Object apply(ActivityApplyContext activityApplyContext) {
-
+    public IRule assembleRule() {
         ApplyRuleEngine.Builder builder = new ApplyRuleEngine.Builder();
-        builder.addRule(new RepeatApplyRule())
+        return builder.addRule(new RepeatApplyRule())
                 .addRule(new ApplyTimeLimitRule())
-                .build().checkRule(activityApplyContext);
+                .build();
+    }
 
-
-        return null;
+    @Override
+    public void doAction(ActivityApplyContext activityApplyContext) {
+        userScoreComponent.sendUserScore();
     }
 }
