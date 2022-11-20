@@ -1,14 +1,16 @@
 package com.j.best.user.application.service.rule;
 
 import com.j.best.user.domain.vo.ActivityApplyContext;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class RepeatApplyRule implements IRule{
 
     private IRule nextRule;
 
     @Override
     public Boolean checkRule(ActivityApplyContext activityApplyContext) {
-        System.out.println("RepeatApplyRule rule");
+        log.info("RepeatApplyRule rule");
         if (nextRule != null) {
             nextRule.checkRule(activityApplyContext);
         }

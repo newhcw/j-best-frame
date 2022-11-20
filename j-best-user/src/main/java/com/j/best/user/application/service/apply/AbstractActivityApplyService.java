@@ -6,9 +6,11 @@ import com.j.best.user.application.service.rule.IRule;
 import com.j.best.user.application.service.rule.RepeatApplyRule;
 import com.j.best.user.domain.vo.ActivityApplyContext;
 import com.j.best.user.resposity.local.MarketActivityResposity;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public abstract class AbstractActivityApplyService {
 

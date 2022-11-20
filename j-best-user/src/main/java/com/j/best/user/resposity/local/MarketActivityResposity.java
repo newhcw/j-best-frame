@@ -12,7 +12,7 @@ public class MarketActivityResposity {
     private MarketActivityMapper marketActivityMapper;
 
     public Long saveMarketActivityApplyIfo() {
-       return marketActivityMapper.save();
+       return marketActivityMapper.save(1,2,3,"pid");
     }
 
 }
