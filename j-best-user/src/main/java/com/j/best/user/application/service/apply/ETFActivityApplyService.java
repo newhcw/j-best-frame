@@ -1,6 +1,7 @@
 package com.j.best.user.application.service.apply;
 
 
+import com.j.best.common.SpringUtils;
 import com.j.best.user.application.service.action.IUserScoreComponent;
 import com.j.best.user.application.service.rule.ApplyRuleEngine;
 import com.j.best.user.application.service.rule.ApplyTimeLimitRule;
@@ -16,6 +17,8 @@ public class ETFActivityApplyService extends AbstractActivityApplyService implem
 
     @Autowired
     private IUserScoreComponent userScoreComponent;
+    @Autowired
+    SpringUtils springUtils;
 
     @Override
     public String getActivityType() {

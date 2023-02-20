@@ -38,7 +38,7 @@ public class Builder<T> {
     }
 
     public static void main(String[] args) {
-        People huangchunwu = Builder.builder(People::new).with(People::setAge, "huangchunwu").with(People::setAge, 31).build();
+        //People huangchunwu = Builder.builder(People::new).with(People::setAge, "huangchunwu").with(People::setAge, 31).build();
     }
 
     @FunctionalInterface
