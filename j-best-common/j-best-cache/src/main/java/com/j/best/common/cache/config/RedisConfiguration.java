@@ -26,7 +26,7 @@ public class RedisConfiguration {
 
 
     /**
-     *
+     * 如何解决拓扑刷新问题
      * 解决方案1：
      *
      * 升级到SpringBoot2.3.0或以上版本。并添加如下配置项
