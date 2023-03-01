@@ -1,4 +1,4 @@
-package com.j.best.user.support;
+package com.j.best.user.application.service;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
@@ -8,13 +8,15 @@ import io.micrometer.core.instrument.binder.jvm.ExecutorServiceMetrics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import javax.annotation.Resources;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
 @Service
 public class ThreadPoolMonitor {
 
-    @Autowired
+    @Resource
     private MeterRegistry meterRegistry;
 
     /**
