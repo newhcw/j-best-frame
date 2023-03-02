@@ -2,6 +2,7 @@ package com.j.best.user.controller;
 
 import com.j.best.user.application.service.IUserService;
 import com.j.best.user.domain.response.ResultHttpResponse;
+import com.j.best.web.repeat.Repeat;
 import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class UserController {
         return ResultHttpResponse.setData(userService.queryUserInfoByUserId(userId));
     }
 
+    @Repeat
     @Timed(value = "register_request_duration", description = "注册接口", histogram = true)
     @RequestMapping(value = "/register")
     public ResultHttpResponse register(@RequestParam(value = "phone")String phone,@RequestParam(value = "nickName")String nickName) {

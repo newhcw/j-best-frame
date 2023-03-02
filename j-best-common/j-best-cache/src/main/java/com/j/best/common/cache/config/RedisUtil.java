@@ -13,6 +13,10 @@ public class RedisUtil {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    public boolean lock(String key, long value) {
+        return redisTemplate.opsForValue().setIfAbsent(key,value);
+    }
+
     public Object get(String key) {
         return redisTemplate.opsForValue().get(key);
     }
