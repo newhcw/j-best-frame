@@ -14,7 +14,7 @@ public class RedisUtil {
     private RedisTemplate redisTemplate;
 
     public boolean lock(String key, long value) {
-        return redisTemplate.opsForValue().setIfAbsent(key,value);
+        return redisTemplate.opsForValue().setIfAbsent(key,value,value,TimeUnit.SECONDS);
     }
 
     public Object get(String key) {
