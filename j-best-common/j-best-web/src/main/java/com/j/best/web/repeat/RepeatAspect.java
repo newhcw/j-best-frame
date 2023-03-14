@@ -30,11 +30,11 @@ public class RepeatAspect {
     @Around("repeatRequest()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
         HttpServletRequest request = WebUtils.getRequest();
-        Long userId = WebUtils.getId();
+        Long taken = WebUtils.getTaken();
         String uri = request.getRequestURI();
         MethodSignature methodSignature = (MethodSignature)point.getSignature();
         Repeat repeat = methodSignature.getMethod().getAnnotation(Repeat.class);
-        StringBuilder key = new StringBuilder(uri).append("_").append(userId);
+        StringBuilder key = new StringBuilder(uri).append("_").append(taken);
         if(redisUtil.lock(key.toString(), repeat.value())){
             return point.proceed();
         }else{

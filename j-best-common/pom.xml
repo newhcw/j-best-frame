@@ -19,6 +19,7 @@
         <module>j-best-alarm</module>
         <module>j-best-utils</module>
         <module>j-best-mybatis-plus</module>
+        <module>j-best-log</module>
     </modules>
 
 

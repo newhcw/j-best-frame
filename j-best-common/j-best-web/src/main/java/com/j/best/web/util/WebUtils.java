@@ -72,6 +72,11 @@ public class WebUtils {
         return userName;
     }
 
+
+    public static Long getTaken(){
+        return Long.parseLong(WebUtils.getRequest().getHeader("token"));
+    }
+
     /**
      * 获取ip
      * @return
